@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String 新方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* JavaScript 中 indexof() 
+    String 使用indexof() 可以用来确定一个字符串是否包含另外一个字符串。
+    */
+
+    var aString = 'Hello Node.js!';
+    /* startsWith（）表示源字符串的开始位置是否是指定字符串开头 */
+    console.log(aString.startsWith('hello'));
+    /* endsWith（）表示源字符串的结束位置是否是指定字符串结尾 */
+    console.log(aString.endsWith('!'));
+    /* includes（）表示是否找到了指定字符串 */
+    console.log(aString.includes('o N'));
+    console.log(aString.startsWith('Node',4));
+    console.log(aString.startsWith('Node', 6));
+
+    /* 2 repeat() 字符串重复 */
+    var  ss = 'x';
+    console.log(ss.repeat(3));
+
+    /* 3 模板字符串 */
+    let first = 'abc';
+    let last = '123';
+
+    let tString = `Hello ${first} ${last}`;
+    console.log(tString);
+
+    
+
+
+</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array 扩展</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let datas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    // let aaa = datas.splice(0,2);
+    // console.log(aaa);//1 2
+    // console.log(datas);//3~0  1~0
+    // console.log(datas.splice(0, 2));// 3 4   /   1 2
+
+
+    /*
+    function find(n,array){
+        for(){
+            if(array[i] > n){
+                return array[i];
+            }
+        }
+    }*/
+
+    // find() 用于找出第一个符合条件的数组成员
+    // 它的参数是一个回调函数，所有的数据成员依次执行该回调方法
+    // 直接找到第一个值并返回true,然后返回该成员的值
+    // 如果没有 则返回undefined
+    let restault = datas.find(function (n) {
+        return n > 5;
+    });
+
+    console.log(restault);
+
+    // findIndex（value,index,arr）
+    // 返回第一个符合条件的数组成员的位置，如果不满足就返回-1
+    // value 当前的值 
+    // index 当前的位置
+    // arr 源数组
+    restault = datas.findIndex(function (value, index, arr) {
+        // console.log(arr);
+        if (value > 5)
+            return index;
+        // return value > 7;
+    });
+
+    console.log(restault);
+    console.log('***********');
+    let flag = false;
+    let tempArray = datas;
+    let resArray = [];
+    while (!flag) {
+        let res = tempArray.find(function (value, index, arr) {
+            return value > 5;
+        });
+        
+        if (res != undefined) {
+            resArray.push(res);
+            console.log('bf',tempArray);
+            let ress = tempArray.findIndex(function (value, index, arr) {
+                if (value > 5)
+                    return index;
+            });
+            tempArray.splice(0, ress);
+
+            console.log('af',tempArray);
+            
+        } else {
+            flag = true;
+        }
+    }
+    console.log(resArray);
+
+
+
+
+
+</script>
+
+</html>
